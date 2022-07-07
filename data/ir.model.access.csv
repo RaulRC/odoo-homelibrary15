@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+odoo-homelibrary15.access_homelibrary_homelibrary,access_homelibrary_homelibrary,odoo-homelibrary15.model_homelibrary_homelibrary,base.group_user,1,1,1,1
+odoo-homelibrary15.access_homelibrary_book,access_homelibrary_book,odoo-homelibrary15.model_homelibrary_book,base.group_user,1,1,1,1
+odoo-homelibrary15.access_homelibrary_rack,access_homelibrary_rack,odoo-homelibrary15.model_homelibrary_rack,base.group_user,1,1,1,1
+odoo-homelibrary15.access_homelibrary_author,access_homelibrary_author,odoo-homelibrary15.model_homelibrary_author,base.group_user,1,1,1,1
+odoo-homelibrary15.access_homelibrary_video,access_homelibrary_video,odoo-homelibrary15.model_homelibrary_video,base.group_user,1,1,1,1
