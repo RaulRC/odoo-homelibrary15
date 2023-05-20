@@ -6,6 +6,8 @@ class Homelibrary(models.Model):
     _description = "Biblioteca"
     owner = fields.Many2one('res.users', string='Propietario')
     name = fields.Char(required=True, string='Nombre')
+    rack_ids = fields.One2many('homelibrary.rack', 'library_id', string='Librerías en la biblioteca')
+
 
 
 class Book(models.Model):
@@ -28,6 +30,7 @@ class Rack(models.Model):
     name = fields.Char(required=True, string='Nombre de la estantería')
     book_ids = fields.One2many('homelibrary.book', 'rack_id', string='Libros en estantería')
     number_books = fields.Integer(compute='count_books', string='Total libros en estantería')
+    library_id = fields.Many2one('homelibrary.homelibrary', string='Biblioteca')
 
 
 class Author(models.Model):

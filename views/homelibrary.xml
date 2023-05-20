@@ -2,6 +2,39 @@
 <odoo>
 
     <!-- VIEWS -->
+
+    <!-- Libraries -->
+    <!-- form -->
+
+    <record model="ir.ui.view" id="homelibrary_homelibrary_form_view">
+      <field name="name">homelibrary.homelibrary.form</field>
+      <field name="model">homelibrary.homelibrary</field>
+      <field name="arch" type="xml">
+        <form string="Libraries">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="owner"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- tree -->
+
+    <record model="ir.ui.view" id="homelibrary_homelibrary_tree_view">
+      <field name="name">homelibrary.homelibrary.tree</field>
+      <field name="model">homelibrary.homelibrary</field>
+      <field name="arch" type="xml">
+        <tree string="Biblioteca">
+          <field name="name"/>
+          <field name="owner"/>
+        </tree>
+      </field>
+    </record>
+
+
     <!-- Book -->
     <!-- form -->
 
@@ -115,7 +148,8 @@
             <group>
               <field name="name"/>
               <field name="book_ids"/>
-	      <field name="number_books"/>
+                <field name="number_books"/>
+
             </group>
           </sheet>
         </form>
@@ -131,11 +165,24 @@
         <tree string="Estanterías">
           <field name="name"/>
           <field name="book_ids"/>
+
         </tree>
       </field>
     </record>
 
     <!-- ACTIONS -->
+        <!-- homelibrary action -->
+    <record model="ir.actions.act_window" id="homelibrary_homelibrary_action">
+      <field name="name">Bibliotecas</field>
+      <field name="res_model">homelibrary.homelibrary</field>
+      <field name="view_mode">tree,form</field>
+
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Añade librerías
+        </p>
+      </field>
+    </record>
     <!-- book action -->
     <record model="ir.actions.act_window" id="homelibrary_book_action">
       <field name="name">Libros</field>
@@ -208,6 +255,8 @@
     <menuitem id="homelibrary_menu_racks" name="Estanterías"
             parent="main_homelibrary_menu"/>
 
+    <menuitem id="homelibrary_homelibrary_menu" name="Librerías"
+	      action="homelibrary_homelibrary_action" parent="homelibrary_menu" />
 
     <menuitem id="homelibrary_book_menu" name="Libros"
 	      action="homelibrary_book_action" parent="homelibrary_menu"/>
